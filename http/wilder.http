@@ -2,5 +2,21 @@ POST http://localhost:3000/api/wilder
 Content-Type: application/json
 
 {
-    "names":"REST CLIENT WILDER 3"
+    "name":"toto"
+}
+
+###
+GET http://localhost:3000/api/wilder
+
+### 
+DELETE  http://localhost:3000/api/wilder/1
+
+
+###
+PUT   http://localhost:3000/api/wilder
+Content-Type: application/json
+
+{
+    "id":"2",
+    "name":"toto"
 }
