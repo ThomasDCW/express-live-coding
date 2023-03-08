@@ -30,3 +30,13 @@ Content-Type: application/json
     "wilderName":"tutu",
     "skillName":"PHP"
 }
+
+###
+PUT http://localhost:3000/api/wilder-rate-skill
+Content-Type: application/json
+
+{
+    "wilderName": "toto",
+    "skillName": "JS",
+    "value": 5
+}

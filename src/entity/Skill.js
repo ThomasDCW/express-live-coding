@@ -11,4 +11,11 @@ module.exports = new EntitySchema({
       unique: true,
     },
   },
+  relations: {
+    grades: {
+      target: "Grade",
+      type: "one-to-many",
+      joinTable: true,
+    },
+  },
 });

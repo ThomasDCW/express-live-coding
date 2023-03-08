@@ -17,5 +17,10 @@ module.exports = new EntitySchema({
       joinTable: true,
       eager: true,
     },
+    grades: {
+      target: "Grade",
+      type: "one-to-many",
+      joinTable: true,
+    },
   },
 });

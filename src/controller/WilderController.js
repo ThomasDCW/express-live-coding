@@ -1,5 +1,6 @@
 const Wilder = require("../entity/wilder");
 const Skill = require("../entity/Skill");
+const Grade = require("../entity/Grade");
 const dataSource = require("../utils").dataSource;
 
 module.exports = {
@@ -64,6 +65,27 @@ module.exports = {
     } catch (err) {
       console.log(err);
       res.send("Error while adding skill to wilder");
+    }
+  },
+  rateSkill: async (req, res) => {
+    try {
+      const wilderToUpdate = await dataSource
+        .getRepository(Wilder)
+        .findOneByOrFail({ name: req.body.wilderName });
+      console.log(wilderToUpdate);
+      const skillToRate = await dataSource
+        .getRepository(Skill)
+        .findOneByOrFail({ name: req.body.skillName });
+      console.log(skillToRate);
+      const rating = await dataSource.getRepository(Grade).save({
+        value: req.body.value,
+        skills: skillToRate,
+        wilders: wilderToUpdate,
+      });
+      res.send("Skill successfully rated !");
+    } catch (err) {
+      console.log(err);
+      res.send("Error while rating the skill.");
     }
   },
 };
