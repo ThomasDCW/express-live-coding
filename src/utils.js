@@ -5,7 +5,11 @@ module.exports = {
     database: "./wildersdb.sqlite",
     type: "sqlite",
     synchronize: true,
-    entities: [require("./entity/Wilder"), require("./entity/Skill")],
+    entities: [
+      require("./entity/Wilder"),
+      require("./entity/Skill"),
+      require("./entity/Grade"),
+    ],
     logging: ["query", "error"],
   }),
 };
