@@ -1,4 +1,5 @@
 const Wilder = require("../entity/wilder");
+const Skill = require("../entity/Skill");
 const dataSource = require("../utils").dataSource;
 
 module.exports = {
@@ -44,6 +45,25 @@ module.exports = {
     } catch (err) {
       console.log(err);
       res.send("wilder not updated");
+    }
+  },
+
+  addSkill: async (req, res) => {
+    try {
+      const wilderToUpdate = await dataSource
+        .getRepository(Wilder)
+        .findOneBy({ name: req.body.wilderName });
+      console.log("wilder", wilderToUpdate);
+      const skillToAdd = await dataSource
+        .getRepository(Skill)
+        .findOneBy({ name: req.body.skillName });
+      wilderToUpdate.skills = [...wilderToUpdate.skills, skillToAdd];
+      console.log("Skill", skillToAdd);
+      await dataSource.getRepository(Wilder).save(wilderToUpdate);
+      res.send("Skill added to wilder");
+    } catch (err) {
+      console.log(err);
+      res.send("Error while adding skill to wilder");
     }
   },
 };

@@ -20,3 +20,13 @@ Content-Type: application/json
     "id":"2",
     "name":"toto"
 }
+
+
+###
+PUT http://localhost:3000/api/wilder/addskill
+Content-Type: application/json
+
+{
+    "wilderName":"toto",
+    "skillName":"JS"
+}

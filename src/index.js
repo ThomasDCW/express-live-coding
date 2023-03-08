@@ -13,6 +13,7 @@ app.get("/", (req, res) => {
 
 app.get("/api/wilder", wildercontroller.read);
 app.post("/api/wilder", wildercontroller.create);
+app.put("/api/wilder/addskill", wildercontroller.addSkill);
 app.delete("/api/wilder/:id", wildercontroller.delete);
 app.put("/api/wilder", wildercontroller.update);
 
