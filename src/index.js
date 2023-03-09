@@ -1,10 +1,13 @@
 const express = require("express");
+const cors = require("cors");
 const dataSource = require("./utils").dataSource;
 const wildercontroller = require("./controller/WilderController");
 const skillcontroller = require("./controller/SkillController");
 const gradeController = require("./controller/GradeController");
 
 const app = express();
+const PORT = 8000;
+app.use(cors());
 
 app.use(express.json());
 
@@ -31,7 +34,7 @@ app.delete("/api/grade/:id", gradeController.delete);
 
 const start = async () => {
   await dataSource.initialize();
-  app.listen(3000, () => {
+  app.listen(PORT, () => {
     console.log("Server started on 3000");
   });
 };
