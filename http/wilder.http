@@ -2,7 +2,8 @@ POST http://localhost:8000/api/wilder
 Content-Type: application/json
 
 {
-    "name":"tata"
+    "name":"tata",
+    "city":"Lille"
 }
 
 ###
