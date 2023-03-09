@@ -28,7 +28,7 @@ PUT http://localhost:8000/api/wilder/addskill
 Content-Type: application/json
 
 {
-    "wilderName":"tutu",
+    "wilderName":"Tata",
     "skillName":"PHP"
 }
 
