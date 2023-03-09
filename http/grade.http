@@ -1,4 +1,4 @@
-POST http://localhost:3000/api/grade
+POST http://localhost:8000/api/grade
 Content-Type: application/json
 
 {
@@ -6,14 +6,14 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:3000/api/grade
+GET http://localhost:8000/api/grade
 
 ### 
-DELETE  http://localhost:3000/api/grade/8
+DELETE  http://localhost:8000/api/grade/8
 
 
 ###
-PUT   http://localhost:3000/api/grade
+PUT   http://localhost:8000/api/grade
 Content-Type: application/json
 
 {
